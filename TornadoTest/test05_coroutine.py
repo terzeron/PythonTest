@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+from time import sleep
+
 from tornado import gen
 from tornado.httpclient import AsyncHTTPClient
 
@@ -8,5 +10,3 @@ def fetch_coroutine(url):
     http_client = AsyncHTTPClient()
     response = yield http_client.fetch(url)
     raise gen.Return(response.body)
-
-

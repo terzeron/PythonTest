@@ -15,3 +15,5 @@ def async_fetch_future(url):
     print("end")
     return my_future
 
+f = async_fetch_future("https://terzeron.net")
+print(f)
