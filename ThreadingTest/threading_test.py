@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import  threading
+import threading
 
 def worker(data):
     try:
