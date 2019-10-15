@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# https://9bow.github.io/PyTorch-tutorials-kr-0.3.1/beginner/blitz/tensor_tutorial.html
+
 from __future__ import print_function
 import torch
 
@@ -52,11 +54,19 @@ print("a=", a)
 b = a.numpy() # transform a into numpy array
 print("b=", b)
 a.add_(1)
-print(a)
-print(b)
+print("a=", a)
+print("b=", b)
 
+import numpy as np
+a = np.ones(5)
+b = torch.from_numpy(a)
+print("a=", a)
+print("b=", b)
+np.add(a, 1, out=a)
+print("a=", a)
+print("b=", b)
 
-
-
-
-
+if torch.cuda.is_available():
+    x = x.cuda()
+    y = y.cuda()
+    print(x + y)
