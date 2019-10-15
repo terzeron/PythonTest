@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 from matplotlib import pyplot as plt
 from sklearn.datasets import load_iris

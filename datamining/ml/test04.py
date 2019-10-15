@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import scipy as sp
 import matplotlib.pyplot as plt

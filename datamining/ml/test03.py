@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 import scipy, numpy
 
 print("scipy.version.full_version=", scipy.version.full_version)
