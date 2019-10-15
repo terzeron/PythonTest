@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# https://9bow.github.io/PyTorch-tutorials-kr-0.3.1/beginner/blitz/tensor_tutorial.html#sphx-glr-beginner-blitz-tensor-tutorial-py
+
 from __future__ import print_function
 import torch
 
