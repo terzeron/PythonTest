@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import timeit
 from concurrent.futures import ProcessPoolExecutor
