@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 
-import tensorflow as tf
+import os
+import tensorflow.compat.v1 as tf
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+#tf.disable_v2_behavior()
+
 
 with tf.Session() as sess:
     x = tf.Variable([1.0, 2.0])

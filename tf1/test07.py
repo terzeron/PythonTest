@@ -2,7 +2,12 @@
 
 # https://www.katacoda.com/basiafusinska/courses/tensorflow-getting-started/tensorflow-core
 
-import tensorflow as tf
+import os
+import tensorflow.compat.v1 as tf
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+#tf.disable_v2_behavior()
+
 
 input1 = tf.constant(2.0)
 input2 = tf.constant(5.0)

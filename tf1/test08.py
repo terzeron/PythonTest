@@ -2,8 +2,13 @@
 
 # https://www.katacoda.com/basiafusinska/courses/tensorflow-getting-started/tensorflow-mnist-beginner
 
-import tensorflow as tf
+import os
+import tensorflow.compat.v1 as tf
 from tensorflow.examples.tutorials.mnist import input_data
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+#tf.disable_v2_behavior()
+
 
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 

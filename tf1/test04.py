@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 
-import tensorflow as tf
+import os
+import tensorflow.compat.v1 as tf
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+#tf.disable_v2_behavior()
+
 
 input1 = tf.constant([3.0])
 input2 = tf.constant([2.0])
