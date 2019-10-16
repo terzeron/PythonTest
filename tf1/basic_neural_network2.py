@@ -26,17 +26,19 @@ Y = tf.placeholder(tf.float32)
 
 # -1.0부터 1.0 사이의 정규분포에 따르는 값들로 초기화된 2x3 배열
 W1 = tf.Variable(tf.random_uniform([2, 10], -1.0, 1.0))
-W2 = tf.Variable(tf.random_uniform([10, 3], -1.0, 1.0))
+W2 = tf.Variable(tf.random_uniform([10, 10], -1.0, 1.0))
+W3 = tf.Variable(tf.random_uniform([10, 3], -1.0, 1.0))
 # y절편값은 0으로 초기화
 b1 = tf.Variable(tf.zeros([10]))
-b2 = tf.Variable(tf.zeros([3]))
+b2 = tf.Variable(tf.zeros([10]))
+b3 = tf.Variable(tf.zeros([3]))
 
 # 가설 L = X * W1 + b1
 L1 = tf.add(tf.matmul(X, W1), b1)
-# activation function
 L1 = tf.nn.relu(L1)
-# 가설을 softmax를 이용하여 총 합이 1.0이 되도록(확률값으로) 변환
-model = tf.add(tf.matmul(L1, W2), b2)
+L2 = tf.add(tf.matmul(L1, W2), b2)
+L3 = tf.add(tf.matmul(L2, W3), b3)
+model = L3
 # 비용함수
 # cross entropy 함수는 one-hot encoding으로 표현된 classification 문제에 적합함
 # mean square error 함수는 실제값과 예측값의 차이를 제곱합해서 최소화하려는 것이 목적
