@@ -38,33 +38,33 @@ model = tf.nn.softmax(L)
 # 비용함수
 # cross entropy 함수는 one-hot encoding으로 표현된 classification 문제에 적합함
 # mean square error 함수는 실제값과 예측값의 차이를 제곱합해서 최소화하려는 것이 목적
-# cross entropy 함수는 실제값과 log(예측값)*(-1)을 곱해서 최소화하려는 것이 목적
-# 가정: 실제값은 0이거나 1임
-# 실제값이 1일 때, 
-#   예측값이 0에 가까워질수록 비용함수값은 1에 가까워지고
-#   예측값이 1에 가까워질수록 비용함수값은 0에 가까워짐
-# 실제값이 0일 때,
-#   예측값과 상관없이 0이 됨
+# cross entropy 함수는 유사할수록 0에 logarithmic하게 가까워지고 차이가 클수록 무한대에 가까워짐
 cost = tf.reduce_mean(-tf.reduce_sum(Y * tf.log(model), axis=1))
 
-optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.001)
+
+# 학습
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.01)
 train_op = optimizer.minimize(cost)
 
 init = tf.global_variables_initializer()
-with tf.Session() as sess:
-    sess.run(init)
+sess = tf.Session()
+sess.run(init)
 
-    for step in range(10000):
-        sess.run(train_op, feed_dict={X: x_data, Y: y_data})
+for step in range(100):
+    sess.run(train_op, feed_dict={X: x_data, Y: y_data})
 
-        if (step + 1) % 1000 == 0:
-            print(step + 1, sess.run(cost, feed_dict={X: x_data, Y: y_data}))
+    if (step + 1) % 10 == 0:
+        print(step + 1, sess.run(cost, feed_dict={X: x_data, Y: y_data}))
 
-    prediction = tf.argmax(model, axis=1)
-    target = tf.argmax(Y, axis=1)
-    print("prediction=", sess.run(prediction, feed_dict={X: x_data}))
-    print("target=", sess.run(target, feed_dict={Y: y_data}))
 
-    is_correct = tf.equal(prediction, target)
-    accuracy = tf.reduce_mean(tf.cast(is_correct, tf.float32))
-    print("accuracy=%0.2f" % sess.run(accuracy * 100, feed_dict={X: x_data, Y: y_data}))
+# 학습된 결과 확인
+# argmax는 요소 중 가장 큰 값을 골라줌
+prediction = tf.argmax(model, axis=1)
+target = tf.argmax(Y, axis=1)
+print("prediction=", sess.run(prediction, feed_dict={X: x_data}))
+print("target=", sess.run(target, feed_dict={Y: y_data}))
+
+# 정확도 측정
+is_correct = tf.equal(prediction, target)
+accuracy = tf.reduce_mean(tf.cast(is_correct, tf.float32))
+print("accuracy=%0.2f" % sess.run(accuracy * 100, feed_dict={X: x_data, Y: y_data}))
