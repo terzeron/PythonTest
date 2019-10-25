@@ -42,6 +42,15 @@ params = list(net.parameters())
 print("len(params)=", len(params))
 print("params[0].size()=", params[0].size())
 
+input = Variable(torch.randn(1, 1, 32, 32))
+print("input=", input)
+out = net(input)
+print("out=", out)
+
+# 초기화 - 변화도를 초기화하고 랜덤값으로 역전파
+net.zero_grad()
+out.backward(torch.randn(1, 10))
+
 # 손실 함수
 
 # 역전파
