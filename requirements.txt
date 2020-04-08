@@ -1,1 +1,4 @@
+ordered-set==3.1.1
+python-dateutil==2.8.1
 pytz==2019.3
+six==1.14.0
