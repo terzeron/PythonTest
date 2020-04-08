@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 
-import scipy as sp
+import numpy
 import math
 
 def tfidf(term, doc, docset):
@@ -9,7 +9,7 @@ def tfidf(term, doc, docset):
     tf = float(doc.count(term)) / (sum(doc.count(w) for w in set(doc)))
     print("tf=", tf)
     # idf: 전체 문서 중 특정 단어를 포함한 문서 비율의 역수
-    idf = sp.log(float(len(docset)) / (len([doc for doc in docset if term in doc])))
+    idf = numpy.lib.scimath.log(float(len(docset)) / (len([doc for doc in docset if term in doc])))
     print("idf=", idf)
     return tf * idf
 

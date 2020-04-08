@@ -6,4 +6,4 @@ class StemmedTfidfVectorizer(TfidfVectorizer):
         analyzer = super(TfidfVectorizer, self).build_analyzer()
         return lambda doc: (english_stemmer.stem(w) for w in analyzer(doc))
 
-vectorizer = StemmedTfidfVectorizer(min_df=1, stop_words='english', charset_error='ignore')
+vectorizer = StemmedTfidfVectorizer(min_df=1, stop_words='english')
