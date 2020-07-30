@@ -4,13 +4,16 @@
 
 import os
 import tensorflow.compat.v1 as tf
-from tensorflow.examples.tutorials.mnist import input_data
+#from tensorflow.examples.tutorials.mnist import input_data
+import tensorflow_datasets
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 #tf.disable_v2_behavior()
+tf.compat.v1.disable_eager_execution()
 
 
-mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+#mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+mnist = tensorflow_datasets.load("mnist")
 
 image_size = 28
 labels_size = 10

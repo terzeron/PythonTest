@@ -5,6 +5,7 @@ import tensorflow.compat.v1 as tf
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 #tf.disable_v2_behavior()
+tf.compat.v1.disable_eager_execution()
 
 # x: [1, 2, 3]
 # y: [1, 2, 3]

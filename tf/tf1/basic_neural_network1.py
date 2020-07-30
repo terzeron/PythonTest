@@ -6,6 +6,7 @@ import numpy as np
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 #tf.disable_v2_behavior()
+tf.compat.v1.disable_eager_execution()
 
 # 두 가지 속성을 가지는 6개의 데이터
 x_data = np.array([
