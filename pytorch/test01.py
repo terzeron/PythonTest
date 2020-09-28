@@ -49,6 +49,8 @@ z = x.view(-1, 8)
 print("z=x.view(-1, 8)=", z) # 2D (2x8), -1 means estimation
 print("x.size()=", x.size(), "y.size()=", y.size(), "z.size()=", z.size())
 
+# bridge
+# torch tensor to numpy
 a = torch.ones(5)
 print("a=", a)
 b = a.numpy() # transform a into numpy array
@@ -57,6 +59,7 @@ a.add_(1)
 print("a=", a)
 print("b=", b)
 
+# numpy to torch tensor
 import numpy as np
 a = np.ones(5)
 b = torch.from_numpy(a)
@@ -66,6 +69,7 @@ np.add(a, 1, out=a)
 print("a=", a)
 print("b=", b)
 
+# CUDA tensor
 if torch.cuda.is_available():
     x = x.cuda()
     y = y.cuda()
