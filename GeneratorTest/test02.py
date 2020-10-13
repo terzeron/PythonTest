@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+
+
 def fib(n):
     a = b = 1
     for i in range(n):
