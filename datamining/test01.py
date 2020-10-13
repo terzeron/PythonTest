@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
-from IPython.display import display
-import numpy as np
-import matplotlib.pyplot as plt
-import pandas as pd
-import mglearn
+#from IPython.core import display
+#import numpy as np
+#import matplotlib.pyplot as plt
+#import pandas as pd
+#import mglearn
 from sklearn.datasets import load_iris
 
 iris_dataset = load_iris()

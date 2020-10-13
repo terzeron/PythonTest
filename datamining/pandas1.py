@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
 from IPython.display import display
-import numpy as np
-import matplotlib.pyplot as plt
+#import numpy as np
+#import matplotlib.pyplot as plt
 import pandas as pd
-import mglearn
+#import mglearn
 
 data = {
     'Name': ["John", "Anna", "Peter", "Linda"],
