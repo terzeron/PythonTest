@@ -1,9 +1,17 @@
+#!/usr/bin/env python
+
+
 import tornado.ioloop
 import tornado.web
+
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
         self.write("Hello, world")
+
+    def data_received(self, data):
+        print(data)
+
 
 def make_app():
     return tornado.web.Application([
