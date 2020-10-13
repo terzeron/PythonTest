@@ -1,0 +1,45 @@
+aiohttp==3.6.3
+async-timeout==3.0.1
+asyncio==3.4.3
+attrs==20.2.0
+certifi==2020.6.20
+chardet==3.0.4
+click==7.1.2
+cycler==0.10.0
+idna==2.10
+ipython-genutils==0.2.0
+jedi @ file:///tmp/build/80754af9/jedi_1598371611696/work
+joblib @ file:///tmp/build/80754af9/joblib_1601912903842/work
+kiwisolver==1.2.0
+matplotlib @ file:///tmp/build/80754af9/matplotlib-base_1597876319132/work
+mkl-fft==1.2.0
+mkl-random==1.1.1
+mkl-service==2.3.0
+multidict==4.7.6
+nltk @ file:///tmp/build/80754af9/nltk_1592496090529/work
+numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1596233721170/work
+olefile==0.46
+pandas @ file:///tmp/build/80754af9/pandas_1602088120436/work
+parso==0.7.0
+pexpect==4.8.0
+pickleshare==0.7.5
+pika==1.1.0
+Pillow @ file:///tmp/build/80754af9/pillow_1594307295532/work
+prompt-toolkit @ file:///tmp/build/80754af9/prompt-toolkit_1598885458782/work
+ptyprocess==0.6.0
+Pygments @ file:///tmp/build/80754af9/pygments_1600458456400/work
+pyparsing==2.4.7
+python-dateutil==2.8.1
+pytz==2020.1
+regex @ file:///tmp/build/80754af9/regex_1602266152551/work
+Rx==3.1.1
+scikit-learn @ file:///tmp/build/80754af9/scikit-learn_1598376899566/work
+scipy @ file:///tmp/build/80754af9/scipy_1597686649129/work
+sip==4.19.13
+six==1.15.0
+threadpoolctl @ file:///tmp/tmp9twdgx9k/threadpoolctl-2.1.0-py3-none-any.whl
+tornado==6.0.4
+tqdm @ file:///tmp/build/80754af9/tqdm_1602185206534/work
+traitlets @ file:///tmp/build/80754af9/traitlets_1600712396819/work
+wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
+yarl==1.5.1
