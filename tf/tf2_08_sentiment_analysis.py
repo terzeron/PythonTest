@@ -26,6 +26,21 @@ model.compile(optimizer=tf.keras.optimizers.Adam(0.001), loss='binary_crossentro
 
 model.fit(sequences, labels, epochs=num_epochs, batch_size=batch_size)
 
+class CustomModel(tf.keras.Model):
+    def __init__(self, vocab_size, embed_dimension, hidden_dimension, output_dimension):
+        super(CustomModel, self).__init__(name="my_model")
+        self.embedding = layers.Embedding(vocab_size, embed_dimension)
+        self.dense_layer = layers.Dense(hidden_dimension, activation='relu')
+        self.output_layer = layers.Dense(output_dimension, activation='sigmoid')
 
-          
+    def call(self, inputs):
+        x = self.embedding(inputs)
+        x = tf.reduce_mean(x, axis=1)
+        x = self.dense_layer(x)
+        x = self.output_layer(x)
+        return x
 
+model = CustomModel(vocab_size=vocab_size, embed_dimension=emb_size, hidden_dimension=hidden_dimension, output_dimension=output_dimension)
+model.compile(optimizer=tf.keras.optimizers.Adam(0.001), loss='binary_crossentropy', metrics=['accuracy'])
+
+model.fit(sequences, labels, epochs=num_epochs, batch_size=batch_size)
