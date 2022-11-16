@@ -13,6 +13,7 @@ click==8.1.3
 cycler==0.11.0
 cymem==2.0.6
 dill==0.3.5.1
+epubcheck==4.2.6
 etils==0.6.0
 fonttools==4.34.4
 frozenlist==1.3.0
@@ -28,10 +29,13 @@ kiwisolver==1.4.3
 KNN==1.0.0
 konlpy==0.6.0
 langcodes==3.3.0
+libhwp==0.2.0
+loguru==0.6.0
 lxml==4.9.1
 MarkupSafe==2.1.1
 matplotlib==3.5.2
 mglearn==0.1.9
+mobi==0.3.3
 multidict==6.0.2
 murmurhash==1.0.7
 nltk==3.7
@@ -46,6 +50,7 @@ preshed==3.0.6
 promise==2.3
 protobuf==3.20.2
 pydantic==1.9.1
+pyflakes==2.5.0
 pyparsing==3.0.9
 python-dateutil==2.8.2
 pytz==2022.1
@@ -63,6 +68,7 @@ spacy-legacy==3.0.9
 spacy-loggers==1.0.2
 SQLAlchemy==1.4.40
 srsly==2.4.3
+tablib==3.2.1
 tensorflow-datasets==4.6.0
 tensorflow-metadata==1.9.0
 termcolor==1.1.0
@@ -80,5 +86,6 @@ wasabi==0.9.1
 wikipedia==1.4.0
 wordcloud==1.8.2.2
 xlrd==2.0.1
+xlwt==1.3.0
 yarl==1.7.2
 zipp==3.8.0
