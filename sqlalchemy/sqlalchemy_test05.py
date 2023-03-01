@@ -3,15 +3,16 @@
 from sqlalchemy import Table, Column, Integer, String, MetaData, create_engine, select, ForeignKey, insert
 from sqlalchemy.orm import registry, relationship, Session
 from pprint import pprint
-#import logging
 
-#logging.basicConfig()
-#logging.getLogger('sqlalchemy.engine').setLevel(logging.ERROR)
+# import logging
+
+# logging.basicConfig()
+# logging.getLogger('sqlalchemy.engine').setLevel(logging.ERROR)
 
 mapper_registry = registry()
 Base = mapper_registry.generate_base()
 
-engine = create_engine("sqlite+pysqlite:///:memory:", echo=False, future=True)
+engine = create_engine("sqlite+pysqlite:///sqlalchemy_test", echo=False, future=True)
 
 
 class User(Base):
@@ -84,4 +85,3 @@ stmt = (
 with engine.connect() as conn:
     for row in conn.execute(stmt):
         print(f"{row.username}")
-
