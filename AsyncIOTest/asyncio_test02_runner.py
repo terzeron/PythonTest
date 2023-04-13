@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+# python version 3.11
+
+import asyncio
+
+async def main():
+    await asyncio.sleep(1)
+    print("hello")
+
+
+with asyncio.Runner() as runner:
+    runner.run(main())
