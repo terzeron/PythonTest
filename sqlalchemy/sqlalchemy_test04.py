@@ -7,7 +7,7 @@ from pprint import pprint
 mapper_registry = registry()
 Base = mapper_registry.generate_base()
 
-engine = create_engine("sqlite+pysqlite:///:memory:", echo=True, future=True)
+engine = create_engine("sqlite+pysqlite:///sqlalchemy_test", echo=True, future=True)
 
 
 class User(Base):
