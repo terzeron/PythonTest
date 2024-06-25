@@ -2,3 +2,4 @@ model/
 .python-version
 __pycache__
 .mypy_cache
+sqlalchemy_test
